@@ -1,6 +1,6 @@
 # Intro
 
-This is a simple Mailchimp client. It intentionally has a small surface area and is only intended to cater to my particular use cases.
+This is a simple Mailchimp client for version 3.0 of the Mailchimp API. It intentionally has a small surface area and is only intended to cater to my particular use cases.
 
 # Installation
 
@@ -38,6 +38,10 @@ The constructor accepts an options object with the following properties:
 ### `apiKey`
 
 A string representing an API key.
+
+### `baseUrl` (getter)
+
+Returns the API URL with the instance's server prefix included.
 
 ### `lastRequestTime`
 
