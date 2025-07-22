@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@jrc03c/fake-jest": "^0.0.18",
+    "eslint": "^9.31.0",
+    "prettier": "^3.6.2"
+  },
+  "main": "src/index.mjs",
+  "module": "src/index.mjs",
+  "name": "@jrc03c/mailchimp-client",
+  "type": "module",
+  "version": "0.0.1"
+}
