@@ -31,6 +31,7 @@ The constructor accepts an options object with the following properties:
 
 - `apiKey` = a string representing an API key
 - `serverPrefix` = a string representing a data center
+- `timeBetweenRequests` = a number representing a time in milliseconds to wait between API calls
 
 ## Properties
 
@@ -38,9 +39,21 @@ The constructor accepts an options object with the following properties:
 
 A string representing an API key.
 
+### `lastRequestTime`
+
+A `Date` representing the last time an API call was made.
+
+This value is updated automatically every time the `sendRequest` method is called; and since virtually all of the methods representing API calls (e.g., `getMemberInfo`) rely on the `sendRequest` method, the `lastRequestTime` value is updated automatically whenever any of those methods is called.
+
 ### `serverPrefix`
 
 A string representing a data center.
+
+### `timeBetweenRequests`
+
+A number representing a time in milliseconds to wait between API calls.
+
+Note that all methods representing API calls (e.g., `getMemberInfo`) rely on the `sendRequest` method, and the `sendRequest` method honors the `timeBetweenRequests` value.
 
 ## Methods
 
