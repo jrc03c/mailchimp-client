@@ -63,4 +63,6 @@ Returns info about a particular member in a particular list.
 
 ### `sendRequest(url, options)`
 
-Returns a `Promise` that resolves to a `Response` object. Is just a wrapper around `fetch` that makes sure that the API key is included in an "Authorization" header on the request. Two arguments, `url`, and `options`, get passed directly to `fetch` after the header has added, and the value returned from `fetch` is then returned immediately from the method.
+Returns a `Promise` that resolves to a `Response` object.
+
+This method is just a wrapper around `fetch` that makes sure that the API key is included in an "Authorization" header on the request. Two arguments, `url`, and `options`, get passed directly to `fetch` after the header has been added, and the value returned from `fetch` is then returned immediately from the method.
