@@ -1,3 +1,5 @@
+import { getMemberInfo } from "./get-member-info.mjs"
+
 class MailchimpClient {
   apiKey = ""
   serverPrefix = ""
@@ -5,6 +7,7 @@ class MailchimpClient {
   constructor(options) {
     options = options || {}
     this.apiKey = options.apiKey || this.apiKey
+    this.getMemberInfo = getMemberInfo.bind(this)
     this.serverPrefix = options.serverPrefix || this.serverPrefix
   }
 

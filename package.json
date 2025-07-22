@@ -8,5 +8,8 @@
   "module": "src/index.mjs",
   "name": "@jrc03c/mailchimp-client",
   "type": "module",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "dependencies": {
+    "@jrc03c/js-text-tools": "^0.0.96"
+  }
 }
