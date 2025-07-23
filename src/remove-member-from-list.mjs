@@ -1,8 +1,6 @@
 // NOTE: This function only *archives* the user; it does not permanently delete
 // them from a list. To permanently delete a user from a list, use the website.
 
-import { parseSafe } from "./utils.mjs"
-
 async function removeMemberFromList(listId, emailAddress) {
   const response = await this.sendRequest(
     `/lists/${listId}/members/${emailAddress}`,
@@ -12,7 +10,7 @@ async function removeMemberFromList(listId, emailAddress) {
   if (response.status < 300) {
     return true
   } else {
-    throw new Error(parseSafe(await response.text()))
+    throw new Error(await response.text())
   }
 }
 

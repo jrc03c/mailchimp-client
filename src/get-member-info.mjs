@@ -22,8 +22,10 @@ async function getMemberInfo(listId, emailAddress) {
 
   if (response.status < 300) {
     return data
+  } else if (response.status === 404) {
+    return { email_address: emailAddress, status: "does-not-exist" }
   } else {
-    throw new Error(data)
+    throw new Error(raw)
   }
 }
 

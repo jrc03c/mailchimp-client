@@ -20,7 +20,7 @@ async function setMemberInfo(listId, emailAddress, info) {
   if (response.status < 300) {
     return data
   } else {
-    throw new Error(data)
+    throw new Error(raw)
   }
 }
 
