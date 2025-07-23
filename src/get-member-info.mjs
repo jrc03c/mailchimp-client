@@ -1,21 +1,20 @@
 import { parseSafe } from "./utils.mjs"
-import { urlPathJoin } from "@jrc03c/js-text-tools"
 
-async function getMemberInfo(listId, member) {
+async function getMemberInfo(listId, emailAddress) {
   if (!listId || typeof listId !== "string") {
     throw new Error(
       "The first value passed into the `getMemberInfo` method must be a string representing a list ID!",
     )
   }
 
-  if (!member || typeof member !== "string") {
+  if (!emailAddress || typeof emailAddress !== "string") {
     throw new Error(
       "The second value passed into the `getMemberInfo` method must be a string representing an email address!",
     )
   }
 
   const response = await this.sendRequest(
-    urlPathJoin(this.baseUrl, "lists", listId, "members", member),
+    `/lists/${listId}/members/${emailAddress}`,
   )
 
   const raw = await response.text()

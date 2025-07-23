@@ -10,6 +10,7 @@ import { getTagId } from "./get-tag-id.mjs"
 import { pause } from "@jrc03c/pause"
 import { removeMemberFromList } from "./remove-member-from-list.mjs"
 import { removeTagFromMemberProfile } from "./remove-tag-from-member-profile.mjs"
+import { urlPathJoin } from "@jrc03c/js-text-tools"
 
 class MailchimpClient {
   apiKey = ""
@@ -43,7 +44,7 @@ class MailchimpClient {
     return `https://${this.serverPrefix}.api.mailchimp.com/3.0`
   }
 
-  async sendRequest(url, options) {
+  async sendRequest(path, options) {
     while (new Date() - this.lastRequestTime < this.timeBetweenRequests) {
       await pause(this.timeBetweenRequests / 10)
     }
@@ -59,7 +60,7 @@ class MailchimpClient {
       options.headers.Authorization = `Bearer ${this.apiKey}`
     }
 
-    return fetch(url, options)
+    return fetch(urlPathJoin(this.baseUrl, path), options)
   }
 }
 
