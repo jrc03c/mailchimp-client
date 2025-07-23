@@ -1,3 +1,15 @@
+// Email regular expression from: https://emailregex.com/
+
+const EMAIL_ADDRESS_PATTERN =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+function isAnEmailAddress(x) {
+  return (
+    typeof x === "string" &&
+    !!standardizeEmailAddress(x).match(EMAIL_ADDRESS_PATTERN)
+  )
+}
+
 function parseSafe(x) {
   try {
     return JSON.parse(x)
@@ -6,4 +18,8 @@ function parseSafe(x) {
   }
 }
 
-export { parseSafe }
+function standardizeEmailAddress(emailAddress) {
+  return emailAddress.trim().toLowerCase()
+}
+
+export { isAnEmailAddress, parseSafe, standardizeEmailAddress }
