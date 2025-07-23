@@ -1,4 +1,10 @@
+import { createSegmentForTag } from "./create-segment-for-tag.mjs"
+import { deleteSegment } from "./delete-segment.mjs"
+import { findTags } from "./find-tags.mjs"
+import { getAllMembersInSegment } from "./get-all-members-in-segment.mjs"
+import { getAllMembersWithTag } from "./get-all-members-with-tag.mjs"
 import { getMemberInfo } from "./get-member-info.mjs"
+import { getTagId } from "./get-tag-id.mjs"
 import { pause } from "@jrc03c/pause"
 
 class MailchimpClient {
@@ -9,11 +15,20 @@ class MailchimpClient {
 
   constructor(options) {
     options = options || {}
+
     this.apiKey = options.apiKey || this.apiKey
-    this.getMemberInfo = getMemberInfo.bind(this)
     this.serverPrefix = options.serverPrefix || this.serverPrefix
+
     this.timeBetweenRequests =
       options.timeBetweenRequests || this.timeBetweenRequests
+
+    this.createSegmentForTag = createSegmentForTag.bind(this)
+    this.deleteSegment = deleteSegment.bind(this)
+    this.findTags = findTags.bind(this)
+    this.getAllMembersInSegment = getAllMembersInSegment.bind(this)
+    this.getAllMembersWithTag = getAllMembersWithTag.bind(this)
+    this.getMemberInfo = getMemberInfo.bind(this)
+    this.getTagId = getTagId.bind(this)
   }
 
   get baseUrl() {
