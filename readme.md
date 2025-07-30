@@ -8,6 +8,35 @@ This is a simple Mailchimp client for version 3.0 of the Mailchimp API. It inten
 npm install --save-dev https://github.com/jrc03c/mailchimp-client
 ```
 
+# Testing
+
+```bash
+npm run test
+```
+
+**NOTE:** The unit tests rely on the presence of three environment variables:
+
+- `TEST_MAILCHIMP_API_KEY`
+- `TEST_MAILCHIMP_EMAIL_ADDRESS`
+- `TEST_MAILCHIMP_LIST_ID`
+- `TEST_MAILCHIMP_SERVER_PREFIX`
+
+I recommend storing those values in an `.env` file and then importing them into the environment before running the tests. For example, my `.env` file looks like this:
+
+```bash
+export TEST_MAILCHIMP_API_KEY="...";
+export TEST_MAILCHIMP_EMAIL_ADDRESS="...";
+export TEST_MAILCHIMP_LIST_ID="...";
+export TEST_MAILCHIMP_SERVER_PREFIX="...";
+```
+
+To run the tests, I do:
+
+```bash
+source path/to/.env
+npm run test
+```
+
 # Usage
 
 ```js

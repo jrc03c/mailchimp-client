@@ -1,7 +1,12 @@
 {
+  "dependencies": {
+    "@jrc03c/js-text-tools": "^0.0.96",
+    "@jrc03c/pause": "^0.0.11"
+  },
   "devDependencies": {
     "@jrc03c/fake-jest": "^0.0.18",
     "@jrc03c/js-math-tools": "^0.0.99",
+    "@jrc03c/make-key": "^0.0.40",
     "eslint": "^9.31.0",
     "prettier": "^3.6.2"
   },
@@ -9,9 +14,5 @@
   "module": "src/index.mjs",
   "name": "@jrc03c/mailchimp-client",
   "type": "module",
-  "version": "0.0.1",
-  "dependencies": {
-    "@jrc03c/js-text-tools": "^0.0.96",
-    "@jrc03c/pause": "^0.0.11"
-  }
+  "version": "0.0.1"
 }
