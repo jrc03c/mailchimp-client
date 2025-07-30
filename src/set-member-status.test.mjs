@@ -1,4 +1,5 @@
 import { expect, test } from "@jrc03c/fake-jest"
+import { makeKey } from "@jrc03c/make-key"
 import { MailchimpClient } from "./index.mjs"
 import process from "node:process"
 
@@ -32,7 +33,7 @@ test("setMemberStatus", async () => {
     serverPrefix: process.env.TEST_MAILCHIMP_SERVER_PREFIX,
   })
 
-  const emailAddress = "shiveringvinita@mechanicspedia.com"
+  const emailAddress = makeKey(12) + "@gmail.com"
   const statuses = ["unsubscribed", "cleaned", "pending", "subscribed"]
 
   for (const statusTrue of statuses) {
