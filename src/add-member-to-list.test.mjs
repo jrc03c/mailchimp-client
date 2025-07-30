@@ -1,6 +1,5 @@
 import { expect, test } from "@jrc03c/fake-jest"
 import { MailchimpClient } from "./index.mjs"
-import { makeKey } from "@jrc03c/make-key"
 import process from "node:process"
 
 if (!process.env.TEST_MAILCHIMP_API_KEY) {
