@@ -9,10 +9,11 @@ async function getAllMembersInSegment(segmentId) {
       `${this.baseUrl}/lists/${this.listId}/segments/${segmentId}/members?count=${count}&offset=${offset}`,
     )
 
-    out.push(...data.members)
-    offset += data.members.length
+    const members = data.members || []
+    out.push(...members)
+    offset += members.length
 
-    if (data.members.length === 0) {
+    if (members.length === 0) {
       isStillFetching = false
     }
   }
