@@ -1,3 +1,5 @@
+import { makeKey } from "@jrc03c/make-key"
+
 async function createSegmentForTag(tagId, segmentName) {
   segmentName = segmentName || makeKey(32).toUpperCase()
 

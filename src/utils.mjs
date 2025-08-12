@@ -1,7 +1,9 @@
 // Email regular expression from: https://emailregex.com/
 
+/* eslint-disable */
 const EMAIL_ADDRESS_PATTERN =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+/* eslint-enable */
 
 function isAnEmailAddress(x) {
   return (
