@@ -5,7 +5,7 @@ async function getAllMembersInSegment(segmentId) {
   let count = 1000
 
   while (isStillFetching) {
-    const data = await this.send(
+    const data = await this.sendRequest(
       `${this.baseUrl}/lists/${this.listId}/segments/${segmentId}/members?count=${count}&offset=${offset}`,
     )
 

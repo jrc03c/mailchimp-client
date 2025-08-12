@@ -1,5 +1,5 @@
 async function getTagId(tagName) {
-  const data = await this.send(
+  const data = await this.sendRequest(
     this.baseUrl + "/lists/" + this.listId + "/tag-search?name=" + tagName,
   )
 

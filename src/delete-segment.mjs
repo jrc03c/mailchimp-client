@@ -1,5 +1,5 @@
 async function deleteSegment(segmentId) {
-  await this.send(
+  await this.sendRequest(
     this.baseUrl + "/lists/" + this.listId + "/segments/" + segmentId,
     { method: "DELETE" },
   )

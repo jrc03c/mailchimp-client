@@ -5,7 +5,7 @@ async function findTags(query) {
   let isStillFetching = true
 
   while (isStillFetching) {
-    const data = await this.send(
+    const data = await this.sendRequest(
       `${this.baseUrl}/lists/${
         this.listId
       }/tag-search?name=${encodeURIComponent(
