@@ -1,4 +1,4 @@
-async function findTags(query) {
+async function findTags(listId, query) {
   const out = []
   let count = 1000
   let offset = 0
@@ -6,9 +6,7 @@ async function findTags(query) {
 
   while (isStillFetching) {
     const data = await this.sendRequest(
-      `${this.baseUrl}/lists/${
-        this.listId
-      }/tag-search?name=${encodeURIComponent(
+      `/lists/${listId}/tag-search?name=${encodeURIComponent(
         query,
       )}&count=${count}&offset=${offset}`,
     )

@@ -1,7 +1,7 @@
-async function getAllMembersWithTag(tagId) {
-  const segment = await this.createSegmentForTag(tagId)
-  const members = await this.getAllMembersInSegment(segment.id)
-  await this.deleteSegment(segment.id)
+async function getAllMembersWithTag(listId, tagId) {
+  const segment = await this.createSegmentForTag(listId, tagId)
+  const members = await this.getAllMembersInSegment(listId, segment.id)
+  await this.deleteSegment(listId, segment.id)
   return members
 }
 

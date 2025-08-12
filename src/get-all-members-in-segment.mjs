@@ -1,14 +1,15 @@
-async function getAllMembersInSegment(segmentId) {
+async function getAllMembersInSegment(listId, segmentId) {
   const out = []
   let isStillFetching = true
   let offset = 0
   let count = 1000
 
   while (isStillFetching) {
-    const data = await this.sendRequest(
-      `${this.baseUrl}/lists/${this.listId}/segments/${segmentId}/members?count=${count}&offset=${offset}`,
+    const response = await this.sendRequest(
+      `/lists/${listId}/segments/${segmentId}/members?count=${count}&offset=${offset}`,
     )
 
+    const data = await response.json()
     const members = data.members || []
     out.push(...members)
     offset += members.length
